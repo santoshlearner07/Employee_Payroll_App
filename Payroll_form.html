@@ -26,8 +26,9 @@
         <div class="form-head">Employee Payroll form</div>
         <div class="row-content">
             <label class="label-text" for="name"> Name </label>
-            <input class="input" type="text" id="name" name="name"
+            <input class="input" type="text" id="text" name="text"
                     placeholder="Your name.." required>
+            <error-output class="text-error" for ="text"> </error-output>
         </div>
         <!-- UC3 -->
         <div class="row-content">
@@ -151,11 +152,22 @@
             <label class="label text" for="notes">Notes</label>
             <textarea id="notes" class="input" name="Notes" placeholder="" style="height:100px"></textarea>
         </div>
-        <!-- <label class="label text" for="salary">Choose Your Salary: </label>
-            <input class="input" type="range" name="salary" id="salary" min="300000" max="500000"
-                    step="100" value="400000">
-            <output class="salary-output text" for="salary">400000</output> -->
+        
             <script>
+            //     <label class="label-text" for="name"> Name </label>
+            // <input class="input" type="text" id="name" name="name"
+            //         placeholder="Your name.." required>
+            // <error-output class="text-error" for ="text"> </error-output>
+
+                const text = document.querySelector('#text');
+                const textError = document.querySelector('.text-error');
+                text.addEventListener('input',function(){
+                    let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+                    if(nameRegex.test(text.value))
+                    textError.textContent="";
+                    else textError.textContent="Name is Incorrect";
+                });
+
                 const salary = document.querySelector('#salary');
                 const output = document.querySelector('.salary-output');
                 output.textContent= salary.value;
@@ -164,7 +176,6 @@
                 });
             </script>
     
-
         <div class="button-content">
             <a href="" class="resetButton button cancelButton">Cancel</a>
             <div class="submit-reset">
