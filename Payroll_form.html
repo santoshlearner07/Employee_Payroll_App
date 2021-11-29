@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/Payroll_form.css">
+    <!-- <link rel="stylesheet" href="../Employee_Payroll_App/css/Payroll_form.css"> -->
     <title>Employee payroll form</title>
-    <script defer src="js/Payroll_form.js"></script>
+    <script defer src="../Employee_Payroll_App/js/Payroll_form_js.js"></script>
+    <script defer src="../Employee_Payroll_App/js/EmployeePayroll.js"></script>
 </head>
 <body>
     <!-- UC1 -->
     <header class="header-content header">
         <div class="logo-content">
-            <img src="asset/employee.jpg" alt="LOGO" >
+            <img src="asset/logo.png" alt="LOGO" >
             <div>
                 <span class="emp-text">EMPLOYEE</span><br>
                 <span class="emp-text emp-payroll">PAYROLL</span>
@@ -21,12 +23,13 @@
         </div>
     </header>
     <!-- UC2 -->
-    <div class="form-content">
-        <form class="form" action="#" onsubmit="save(event);return false">
-        <div class="form-head">Employee Payroll form</div>
+    <div id="formId" class="form-content">
+        <!-- <form class="form" action="#" onreset="resetForm()" onsubmit="save(event);return false"> -->
+            <form class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
+            <div class="form-head">Employee Payroll form</div>
         <div class="row-content">
             <label class="label-text" for="name"> Name </label>
-            <input class="input" type="text" id="text" name="text"
+            <input class="input" type="text" id="name" name="name"
                     placeholder="Your name.." required>
             <error-output class="text-error" for ="text"> </error-output>
         </div>
@@ -41,17 +44,17 @@
                 </label>
                 <label>
                     <input type="radio" id="profile2" name="profile"
-                        value="asset/1.jfif" required>
+                        value="asset/2.jfif" required>
                     <img class="profile" id="image1" src="asset/2.jfif" >
                 </label>
                 <label>
                     <input type="radio" id="profile3" name="profile"
-                        value="asset/1.jfif" required>
+                        value="asset/3.jfif" required>
                     <img class="profile" id="image3" src="asset/3.jfif" >
                 </label>
                 <label>
                     <input type="radio" id="profile4" name="profile"
-                        value="asset/1.jfif" required>
+                        value="asset/4.jfif" required>
                     <img class="profile" id="image4" src="asset/4.jfif" >
                 </label>
             </div>         
@@ -152,14 +155,9 @@
             <label class="label text" for="notes">Notes</label>
             <textarea id="notes" class="input" name="Notes" placeholder="" style="height:100px"></textarea>
         </div>
-        
-            <script>
-            //     <label class="label-text" for="name"> Name </label>
-            // <input class="input" type="text" id="name" name="name"
-            //         placeholder="Your name.." required>
-            // <error-output class="text-error" for ="text"> </error-output>
 
-                const text = document.querySelector('#text');
+        <!-- <script>
+                const text = document.querySelector('#name');
                 const textError = document.querySelector('.text-error');
                 text.addEventListener('input',function(){
                     let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
@@ -174,7 +172,8 @@
                 salary.addEventListener('input',function(){
                     output.textContent=salary.value;
                 });
-            </script>
+                
+            </script> -->
     
         <div class="button-content">
             <a href="" class="resetButton button cancelButton">Cancel</a>
