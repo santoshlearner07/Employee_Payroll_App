@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="styleSheet" href="../css/new_home.css">
+    <title>Employee Payroll App</title>
+</head>
+<body>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="../asset/logo.png" alt="Logo">
+            <div>
+                <span class="emp-text">Employee</span><br>
+                <span class="emp-text emp-payroll">Payroll</span>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="header-content">
+            <div class="emp-detail-text">
+                Employee Details <div class="emp-count">10</div>
+            </div>
+            <a href="../pages/New_Payroll_Form.html" class="add-button">
+                <img src="../asset/logo.png" alt=""> Add User 
+            </a>
+        </div>
+        <div class="table-main">
+            <table id="table-display" class="table">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Start Date</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><img class="profile" alt=""
+                        src="../asset/1.jfif"> </td>
+                    <td>Santosh Nandiyawar</td>
+                    <td>Male</td>
+                    <td><div class="dept-label">HR</div>
+                        <div class="dept-label">Finance</div> </td>
+                    <td>30000</td>
+                    <td> 1 Nov 2020 </td>
+                    <td>
+                        <img id="1" onclick="remove(this)" alt="delete">
+                        <!-- src="../asset/1.jfif"> -->
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="../js/new_home.js"></script>
+    
+</body>
+</html>
